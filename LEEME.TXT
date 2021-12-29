@@ -1,0 +1,25 @@
+Este proyecto:
+1. Usa el arquetipo de Jersey
+2. Implementa la publicación de servicios sobre Entidades JPA o Entidades en Memoria
+3. Muestra cómo resolver la anidación resultante de implementar una relación bi-direccional
+   en las entidades JPA al generar contenido en XML y JSON. 
+4. Personaliza la creación de XML y elimina la anidación por medio de anotaciones JAX-B
+5. Configura el proveedor JSON llamado jackson para soportar la generación de JSON con 
+   base en las anotaciones JAX-B del punto anterior
+
+¿Cómo probarlo/ejecutarlo?
+1. Verifique que tiene la base de datos instalada y con datos de acuerdo a la configuración
+en src/main/resources/META-INF/persistence.xml
+a) Cheque que el servicio de MySQL 5.7 esté arriba
+b) Cheque que la BD exista y tenga datos. Si es necesario ejecute el script de creación
+en la raiz restBD.sql
+2. Asegure que está instalado Tomcat 9
+3. Ejecute el proyecto sobre Tomcat 9
+4. Haga un GET desde un navegador a http://localhost:8080/01PrimerProyRest/webapi/armadoras
+
+Git:
+Repositorio en:
+     C:\Users\quali\git\01Rest_PrimerProyRestJPA\.git
+     
+Github:
+     https://github.com/qualitrain/01Rest_PrimerProyRestJPA
