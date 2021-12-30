@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,6 +13,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement(name="modelo")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
+@Table(name = "modeloauto")
 public class ModeloAuto {
 	@Id
 	private String claveModelo;
@@ -19,6 +21,7 @@ public class ModeloAuto {
 	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name="claveArmadora")
+//	@JoinColumn(name="clavearmadora")
 	private Armadora armadora;
 	private String version;
 	private boolean importado;
