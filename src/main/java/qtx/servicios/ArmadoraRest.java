@@ -20,6 +20,7 @@ import qtx.entidades.Armadora;
 import qtx.entidades.ModeloAuto;
 import qtx.persistencia.GestorDatosJPA;
 import qtx.persistencia.IGestorDatos;
+import qtx.persistencia.PersistenciaException;
 
 @Path("armadoras")
 public class ArmadoraRest {
@@ -30,7 +31,17 @@ public class ArmadoraRest {
 	}
 
 	public ArmadoraRest() {
-		this.gestorDatos = new GestorDatosJPA();
+		try {
+			this.gestorDatos = new GestorDatosJPA();
+		}
+		catch(PersistenciaException pex) {
+			System.out.println(pex.getMessage());
+			Throwable t = pex.getCause();
+			while(t != null) {
+				System.out.println("causa: " + t.getClass().getName() + "->" +  t.getMessage());
+				t = t.getCause();
+			}
+		}
 	}
 
 	public IGestorDatos getGestorDatos() {
