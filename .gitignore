@@ -1,1 +1,25 @@
 /target/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.settings/**
+.springBeans
+.sts4-cache
+# eclipse specific git ignore
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
