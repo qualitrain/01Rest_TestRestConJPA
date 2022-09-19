@@ -25,6 +25,14 @@ Github:
      https://github.com/qualitrain/01Rest_PrimerProyRestJPA
      
 Contenedores:
+
+a) Despliegue manual:
+   a.1 Ejecutar comandos de cmdAltaContainerMySql.txt
+   a.2 Ejecutar comandos de cmdAltaContainerWar.txt
+   a.3 Al probar la versión con contenedores, usar el nombre del war como contexto:
+       http://localhost:8888/01Rest_TestRestConJPA/webapi/armadoras:
+       
+b) Deswpliegue con docker-compose
     Usar el docker-compose.yaml que está en la raíz del proyecto
     Agregar la carpeta de despliegue de wars, en el host, que será el volumen usado por tomcat
     Copiar el war de esta aplicación a esa carpeta

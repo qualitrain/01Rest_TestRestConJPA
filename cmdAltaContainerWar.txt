@@ -1,0 +1,11 @@
+// En consola bash:
+$ cd /c/Users/hp835/git/01Rest_TestRestConJPA
+$ mvn install
+$ docker build --file Dockerfile --tag qtx:testWar .
+
+// Premisas
+// Host Windows
+// Ya se creó la red local docker (ver cmdAltaContainerMySql.txt)  
+$ docker run -d --name apiWebEjm -p 8888:8080 --network redLocal qtx:testWar
+
+// Probar en navegador: http://localhost:8888/01PrimerProyRest/webapi/armadoras
