@@ -1,4 +1,5 @@
-
+CREATE SCHEMA `restbd`;
+USE `restbd`;
 -- Table structure for table `armadora`
 
 DROP TABLE IF EXISTS `armadora`;
