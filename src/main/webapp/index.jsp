@@ -5,9 +5,9 @@ font-weight: bold;
 }
 </style>
 <body>
-    <h2>Jersey RESTful Web Application!</h2>
-    <p><a href="webapi/myresource">Jersey resource</a>
-    <p>Visit <a href="http://jersey.java.net">Project Jersey website</a>
-    for more information on Jersey!
+    <h2>Ejemplo de un API RESTful</h2>
+    <p><a href="webapi/armadoras">Probar Api</a>
+    <p>Probar alta <a href="./TestPost.html"> de armadoras</a>
+    <br>
 </body>
 </html>
