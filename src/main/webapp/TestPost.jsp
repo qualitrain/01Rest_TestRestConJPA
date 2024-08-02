@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%
+    response.setContentType("text/html; charset=ISO-8859-1");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +10,7 @@
 </head>
 <body>
 	<h3>Alta Armadora</h3>
-	<form action="./webapi/armadoras" method="post">
+	<form action="./webapi/armadoras" method="post" accept-charset="ISO-8859-1">
 		<label for="idclave">clave:</label>
 		<input type="text" name="clave" id="idclave"><br>
 		<label for="idnombre">nombre:</label>
