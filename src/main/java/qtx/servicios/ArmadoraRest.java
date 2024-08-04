@@ -199,7 +199,7 @@ public class ArmadoraRest {
 			return "Error, faltan los campos: " + camposVacios;
 		Armadora armadora = this.gestorDatos.getArmadoraXID(clave);
 		if(armadora == null)
-			return "Error, No existe una armadora con esa clave:" + armadora.getClave();
+			return "Error, No existe una armadora con esa clave:" + clave;
 		return null;
 	}
 

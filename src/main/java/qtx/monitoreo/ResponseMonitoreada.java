@@ -3,8 +3,6 @@ package qtx.monitoreo;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import org.apache.catalina.connector.CoyoteOutputStream;
-
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpServletResponseWrapper;

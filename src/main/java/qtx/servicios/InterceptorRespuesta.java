@@ -2,8 +2,6 @@ package qtx.servicios;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.Arrays;

@@ -137,7 +137,7 @@ public class PrintStreamMonitor extends PrintStream {
 
 	@Override
 	public void print(char[] s) {
-		System.out.println("(Mpsm)  " + this .getClass().getName() + ".print(" + s + ")");
+		System.out.println("(Mpsm)  " + this .getClass().getName() + ".print(" + Arrays.toString(s) + ")");
 		super.print(s);
 	}
 
@@ -197,7 +197,7 @@ public class PrintStreamMonitor extends PrintStream {
 
 	@Override
 	public void println(char[] x) {
-		System.out.println("(Mpsm)  " + this .getClass().getName() + ".println(" + x + ")");
+		System.out.println("(Mpsm)  " + this .getClass().getName() + ".println(" + Arrays.toString(x) + ")");
 		super.println(x);
 	}
 
