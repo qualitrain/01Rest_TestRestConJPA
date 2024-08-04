@@ -27,10 +27,12 @@ public class ArmadoraRest {
 	private IGestorDatos gestorDatos;
 
 	public ArmadoraRest(IGestorDatos gestorDatos) {
+		System.out.println("(API) " + this.getClass().getName() + ".ArmadoraRest(" + gestorDatos + ")");
 		this.gestorDatos = gestorDatos;
 	}
 
 	public ArmadoraRest() {
+		System.out.println("(API) " + this.getClass().getName() + ".ArmadoraRest()");
 		try {
 			this.gestorDatos = new GestorDatosJPA();
 		}
@@ -92,7 +94,9 @@ public class ArmadoraRest {
 			@PathParam("cve")
 			@DefaultValue("000000")
 			String cveArmadora) {
+		System.out.println("(API) " + this.getClass().getName() + ".getArmadoraXID_JSonXML(" + cveArmadora + ")");
 		Armadora armadora = this.gestorDatos.getArmadoraXID(cveArmadora);
+		System.out.println("(API) " + armadora);			
 		return armadora;
 	}
 	
@@ -106,7 +110,6 @@ public class ArmadoraRest {
 		if(armadora == null)
 			return null;
 		Set<ModeloAuto> modelos = armadora.getModelos();
-//		System.out.println(modelos);
 		
 		return new ArrayList<ModeloAuto>(modelos);
 	}
@@ -119,7 +122,7 @@ public class ArmadoraRest {
 		return listaArmadoras;
 	}
 	@POST
-	@Produces(MediaType.TEXT_PLAIN + "; charset=ISO-8859-1")
+	@Produces(MediaType.TEXT_PLAIN + "; charset=UTF-8")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public String insertarArmadora(
 			@FormParam("clave")
@@ -139,7 +142,7 @@ public class ArmadoraRest {
 		return nvaArmadora.toString();
 	}
 	@POST
-	@Produces(MediaType.TEXT_PLAIN + "; charset=ISO-8859-1")
+	@Produces(MediaType.TEXT_PLAIN + "; charset=UTF-8")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String insertarArmadora_Json(Armadora nvaArmadora){
 		String error = this.validarDatosArmadora(nvaArmadora);
@@ -149,7 +152,7 @@ public class ArmadoraRest {
 		return nvaArmadora.toString();
 	}
 	@PUT
-	@Produces(MediaType.TEXT_PLAIN + "; charset=ISO-8859-1")
+	@Produces(MediaType.TEXT_PLAIN + "; charset=UTF-8")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String actualizarArmadora_Json(Armadora armadora){
 		String error = this.validarDatosArmadoraUpdate(armadora);

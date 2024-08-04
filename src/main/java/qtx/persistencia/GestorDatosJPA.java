@@ -18,6 +18,7 @@ public class GestorDatosJPA implements IGestorDatos {
 	private EntityManagerFactory fabricaEntityManager;
 
 	public GestorDatosJPA() {
+	    System.out.println("(Gdat)  " +  this.getClass().getName() + ".GestorDatosJPA()");
 		try {
 			this.fabricaEntityManager = 
 				Persistence.createEntityManagerFactory("miBaseDeDatos");
@@ -37,11 +38,14 @@ public class GestorDatosJPA implements IGestorDatos {
 
 	@Override
 	public Armadora getArmadoraXID(String cveArmadora) {
+	    System.out.println("(Gdat)  " +  this.getClass().getName() + ".getArmadoraXID(" + cveArmadora + ")");
 		EntityManager em = fabricaEntityManager.createEntityManager();
 	    Armadora unaArmadora = em.find(Armadora.class, cveArmadora);
+	    System.out.println("(Gdat)  " + unaArmadora);
 	    em.close();
 		return unaArmadora;
 	}
+	
 	@Override
 	public Armadora getArmadoraConModelosXID(String cveArmadora) {
 		EntityManager em = fabricaEntityManager.createEntityManager();

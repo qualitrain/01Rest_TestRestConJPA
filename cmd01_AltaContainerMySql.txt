@@ -1,0 +1,37 @@
+$ docker pull mysql:8.4.2
+
+// En windows 
+// Con puro docker  
+$ docker run -d --name bdEjemplo01 -p 3306:3306 \
+   -v "C:\qtx\MisDocumentos\2022\DiplomadoArquitecturaBancoAzteca\modulo5\pruebaAltaContenedorMySql\bd\datos":"/var/lib/mysql" \
+   -e MYSQL_ROOT_PASSWORD=root \
+   -e MYSQL_DATABASE=restBD mysql:5.7
+   
+------------------------------Modelo multi-container con red docker virtual
+$ docker network create redLocal
+
+$ docker run -d --network redLocal --network-alias bdApp \
+   --name bdEjemplo01 \
+   -v "C:\qtx\MisDocumentos\2022\DiplomadoArquitecturaBancoAzteca\modulo5\pruebaAltaContenedorMySql\bd\datos":"/var/lib/mysql" \
+   -e MYSQL_ROOT_PASSWORD=root \
+   -e MYSQL_DATABASE=restBD \
+   mysql:5.7
+
+//-----------------------------------------------------------------
+// Alternativa B: Docker-Compose
+//-----------------------------------------------------------------
+
+---- Abrimos consola git bash o PowerShell ------------------------
+
+// [Crear docker-compose.yaml file :spec contenedor mysql]
+$ ex docker-compose-bd-test.yaml
+
+// Bajar imagen mysql
+$ docker pull mysql:5.7
+
+//levantar contenedor bd -detached-
+$ docker-compose --file docker-compose-bd-test.yaml up -d
+
+//ver id del docker levantado
+$ docker ps
+   

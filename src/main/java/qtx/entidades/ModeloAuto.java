@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -12,6 +13,7 @@ import jakarta.xml.bind.annotation.XmlTransient;
 @XmlRootElement(name="modelo")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
+@Table(name = "modeloauto")
 public class ModeloAuto {
 	@Id
 	private String claveModelo;
