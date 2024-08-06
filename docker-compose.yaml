@@ -1,0 +1,29 @@
+version: "2.4"
+
+services:
+
+   bdApp:
+#Specify a custom container name, rather than a generated default name.
+#     container_name: contMySql84
+#Because Docker container names must be unique, you cannot scale a service beyond 1 container if you have #specified a custom name. 
+#
+#     ID de la imagen cargada en el docker desktop local
+#     image: c20987f18b13
+#   
+     image: mysql:8.4.2
+     restart: always
+     volumes:
+       - ./bd/datos:/var/lib/mysql
+     ports:
+     - "3306:3306"
+     environment:
+        MYSQL_ROOT_PASSWORD: 'root'
+        MYSQL_DATABASE: restBDutf8
+   miApp:
+      image: tomcat:jdk17
+      volumes: 
+      - ./appsWars:/usr/local/tomcat/webapps
+      ports:
+      - "8888:8080"
+      depends_on:
+      - bdApp
