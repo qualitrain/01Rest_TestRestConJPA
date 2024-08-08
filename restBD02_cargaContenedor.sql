@@ -48,4 +48,9 @@ INSERT INTO `modeloauto` VALUES
 ('500',1,'Fiat 500 Diabolo','200 Caballos Turbo','Fiat'),
 ('GolfGTI',1,'Golf GTI DSG','Turbo GTI Stronic','VW'),
 ('Jetta',0,'Jetta A4 Trendline','Automatic','VW')
+('LoboHD',1,'Lobo Harley Davidson','Harley Davidson','Ford'),
+('Mustang',1,'Mustang GT 500','500 Caballos','Ford'),
+('Panda','\0','Fiat Panda','Estándar','Fiat'),
+('Spark','\0','Spark Std Aus','Estándar austero','GM'),
+('X3',1,'Serie 3 SUV','Luxe','BMW');
 UNLOCK TABLES;

@@ -19,4 +19,4 @@ services:
      hostname: BDQtxAlex5000
      environment:
         MYSQL_ROOT_PASSWORD: 'root'
-        MYSQL_DATABASE: restBD
+        MYSQL_DATABASE: restBDutf8
