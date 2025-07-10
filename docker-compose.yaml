@@ -1,4 +1,4 @@
-version: "2.4"
+#version: "2.4"
 
 services:
 
@@ -10,12 +10,12 @@ services:
 #     ID de la imagen cargada en el docker desktop local
 #     image: c20987f18b13
 #   
-     image: mysql:8.4.2
+     image: mysql:8.4.4
      restart: always
      volumes:
        - ./bd/datos:/var/lib/mysql
      ports:
-     - "3306:3306"
+     - "3308:3306"
      environment:
         MYSQL_ROOT_PASSWORD: 'root'
         MYSQL_DATABASE: restBDutf8

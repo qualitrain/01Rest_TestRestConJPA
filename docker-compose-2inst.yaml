@@ -1,0 +1,32 @@
+#version: '3.8'  # Asegúrate de usar una versión compatible
+#ejecutar con: docker-compose --file docker-compose-2inst.yaml up -d
+
+services:
+  bdApp:
+    image: mysql:8.4.4
+    restart: always
+    volumes:
+      - ./bd/datos:/var/lib/mysql
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: restBDutf8
+
+  miApp1:  # Primera instancia
+    image: tomcat:jdk17
+    volumes: 
+      - ./appsWars:/usr/local/tomcat/webapps
+    ports:
+      - "8888:8080"  # Puerto único para instancia 1
+    depends_on:
+      - bdApp
+
+  miApp2:  # Segunda instancia
+    image: tomcat:jdk17
+    volumes: 
+      - ./appsWars2:/usr/local/tomcat/webapps
+    ports:
+      - "8889:8080"  # Puerto diferente para instancia 2
+    depends_on:
+      - bdApp
